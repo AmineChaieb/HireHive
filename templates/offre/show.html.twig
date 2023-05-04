@@ -1,0 +1,104 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Offre
+{% endblock %}
+
+{% block body %}
+	{# <div class="container" style="margin-top:50px; margin-bottom:50px"> 
+	    <h1>Offre</h1>
+	
+	    <table class="table">
+	    <div class="card-body">
+	        <tbody>
+	            <tr>
+	                <th>Id</th>
+	                <td>{{ offre.id }}</td>
+	            </tr>
+	            <tr>
+	                <th>Titre</th>
+	                <td>{{ offre.titre }}</td>
+	            </tr>
+	            <tr>
+	                <th>Description</th>
+	                <td>{{ offre.description }}</td>
+	            </tr>
+	            <tr>
+	                <th>Date</th>
+	                <td>{{ offre.date ? offre.date|date('Y-m-d') : '' }}</td>
+	            </tr>
+	            <tr>
+	                <th>Localisation</th>
+	                <td>{{ offre.localisation }}</td>
+	            </tr>
+	            <tr>
+	                <th>Contact</th>
+	                <td>{{ offre.contact }}</td>
+	            </tr>
+	            <tr>
+	                <th>Budget</th>
+	                <td>{{ offre.budget }}</td>
+	            </tr>
+	            <tr>
+	                <th>Budget maximum</th>
+	                <td>{{ offre.budgetmax }}</td>
+	            </tr>
+	        </tbody>
+	        </div>
+	    </table>
+	
+	    <a class="btn btn-outline-info" href="{{ path('app_offre_index') }}">back to list</a>
+	
+	    <a class="btn btn-outline-success" href="{{ path('app_offre_edit', {'id': offre.id}) }}">edit</a>
+	
+	    <a class="btn btn-outline-danger" href="{{ path('app_offre_delete', {'id': offre.id}) }}"> delete </a>
+	</div> #}
+	<link href="{{asset('css/offre.css')}}" rel="stylesheet">
+	<body style="font-family:poppins;">
+	<div style="background-color: #0093E9;
+            background-image: linear-gradient(180deg, #39C7FF 0%, #0093E9 100%);">	
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+		<section id="pricing" class="pricing-content section-padding">
+			<div class="container">
+				<div class="row text-center" style="margin-left:350px;padding-top:50px;padding-bottom:50px;">
+					<div class="col-lg-7 col-sm-6 col-xs-12 wow fadeInUp">
+						<div class="pricing_design">
+							<div class="single-pricing">
+								<div class="price-head">
+									<h1 style="margin-top:auto;">{{ offre.titre }}</h1>
+                                <hr>
+									<p class="price">{{ offre.description }}</p>
+								</div>
+                                <hr>
+								<ul>
+									<li>
+										<b><i class="fa fa-home"></i></b>
+										{{ offre.localisation }}</li>
+									<li>
+										<b><i class="fa fa-phone"></i></b>
+										{{ offre.contact }}</li>
+									<li>
+										<b><i class="fas fa-money-bill-wave"></i></b>
+										{{ offre.budget }} - {{ offre.budgetmax }} Dt</li>
+									<li>
+										<b></b>
+										</li>
+									<li>
+										<b>Crée le </b>
+										 {{ offre.date ? offre.date|date('d-M-y') : '' }}</li>
+								</ul>
+								<div class="pricing-price"></div>
+								<a href="{{ path('app_proposition_new', {'offre': offre}) }}" class="price_btn" style="text-decoration:none;">Proposé maintenant</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+		<script type="text/javascript"></script>
+	</div>
+    </body>
+
+
+{% endblock %}

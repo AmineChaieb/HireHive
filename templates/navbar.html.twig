@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<link href="{{asset('css/navbar4.css')}}" rel="stylesheet">
+{% block navbar %}
+<nav>
+  <div class="logo">
+    <a href="{{path('home_index')}}"> <img src="{{asset('img/hire2.png')}}" width="150px" style="margin-right:-140px;"  ></img> </a>
+  </div>
+  <ul class="menu" style="margin-left:320px;">
+    <li><a href="{{path('home_index')}}">Acceuil</a></li>
+    <li><a href="{{path('app_offre_index')}}">Offre</a></li>
+    <li><a href="{{ path('app_proposition_index2', {'id': app.user.id}) }}">Proposition</a></li>
+    <li><a   href="/Apropos"  >A propos</a></li>
+    {% if app.user %}
+    <li style="left:300px;">
+        <img class="rounded-circle p-1 bg-primary" style="max-width:60px; margin-top:-15px;" src="{{ vich_uploader_asset(app.user,'imageFile')}}"></img>
+        <ul class="sub-menu">
+            <li><a class="nav-lin" href="{{ path('app_user_show', {'id': app.user.id}) }}">{{app.user.name}} {{app.user.lastname}}</a></li>
+            {% if app.user %}
+                <li><a class="nav-lin" href="{{ path('app_offre_index2', {'id': app.user.id}) }}">Mes offres</a></li>
+            {% endif %}
+          {% if app.user %}
+          <li><a class="nav-lin" href="{{ path('app_proposition_recu') }}">propositions recu</a></li>
+          {% endif %}
+            {% if 'ROLE_ADMIN' in app.user.roles %}
+                <li><a class="nav-lin" href="/admin">Administration</a></li>
+            {% endif %}
+            <li><a class="nav-lin" href="/{{app.user ? 'logout' : 'login' }}">{{app.user ? 'logout' : 'login' }}</a></li>
+        </ul>
+    </li>
+    {% endif %}
+<li style="left:280px;"><a   href="/messages"  ><i style="font-size:25px;" class="fa fa-envelope"></i> </a></li>
+<li style="left:240px;"><a   href="/messages"  ><i style="font-size:25px;" class="fa fa-bell"></i> </a></li>
+  </ul>
+  <div class="search">
+    <input type="text" placeholder="Search...">
+    <button><i class="fas fa-search"></i></button>
+  </div>
+</nav>
+
+{% endblock %}

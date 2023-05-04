@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit User{% endblock %}
+
+{% block body %}
+<div style="background-color: #0093E9;
+            background-image: linear-gradient(180deg, #39C7FF 0%, #0093E9 100%);
+            margin-bottom:-16px;">   
+
+    {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+</div>
+{% endblock %}

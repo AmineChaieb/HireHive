@@ -1,0 +1,124 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}proposition{% endblock %}
+
+{% block body %}
+    {# <h1>proposition</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ proposition.id }}</td>
+            </tr>
+            <tr>
+                <th>proposition</th>
+                <td>{{ proposition.proposition }}</td>
+            </tr>
+            <tr>
+                <th>Created_at</th>
+                <td>{{ proposition.createdAt ? proposition.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        {% for offre in offres %}
+            <tr>
+                <th>Titre d'offre</th>
+                <td>{{ offre.titre }}</td>
+            </tr>
+            <tr>
+                <th>Description d'offre</th>
+                <td>{{ offre.description }}</td>
+            </tr>
+            <tr>
+                <th>montant donnée</th>
+                <td>{{offre.budgetmax}}</td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <th>Statut de proposition</th>
+                <td>{{proposition.statut}}</td>
+            </tr>
+            <tr>
+    <tr>
+    <th>From:</th>
+    <td><a href="{{ path('app_profile', {'id': proposition.user.id}) }}">{{ proposition.user.name }} {{ proposition.user.lastname }}</a></td>
+</tr>
+
+
+        </tbody>
+        
+    </table>
+
+    <a href="{{ path('app_proposition_index') }}">back to list</a>
+
+    <a href="{{ path('app_proposition_edit', {'id': proposition.id}) }}">edit</a>
+
+    {{ include('proposition/_delete_form.html.twig') }} #}
+
+<body>
+    <link rel="stylesheet" href="{{asset('css/proposevu.css')}}">
+<div style="background-color: #0093E9;
+            background-image: linear-gradient(180deg, #39C7FF 0%, #0093E9 100%);
+            padding-top:30px;">    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-white mb-5">
+                    <div class="card-heading clearfix border-bottom mb-4">
+                        <h4 class="card-title">Proposition de l'offre</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <li class="position-relative booking">
+                                <div class="media">
+                                    <div class="msg-img">
+                                        <img class="img" src="{{ vich_uploader_asset(proposition.user,'imageFile')}}" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <h5 class="mb-4">{{ proposition.user.name }} {{ proposition.user.lastname }}
+                                            <span class="badge badge-primary mx-3">{{ proposition.statut }}</span>
+                                            </h5>
+                                        <div class="mb-3">
+                                            <span class="mr-2 d-block d-sm-inline-block mb-2 mb-sm-0">Date de proposition:</span>
+                                            <span class="bg-light-blue">{{ proposition.createdAt ? proposition.createdAt|date('Y-m-d H:i:s') : '' }}</span>
+                                        </div>
+                                        <div class="mb-3">
+                                            <span class="mr-2 d-block d-sm-inline-block mb-2 mb-sm-0">Votre budget:</span>
+                                            <span class="bg-light-blue">{{ proposition.offre.budget }} - {{ proposition.offre.budgetmax }} Dt</span>
+                                        </div>
+                                        <div class="mb-3">
+                                            <span class="mr-2 d-block d-sm-inline-block mb-2 mb-sm-0">Proposition:</span>
+                                            <span class="bg-light-blue">{{ proposition.proposition }} Dt</span>
+                                        </div>
+                                        <div class="mb-5">
+                                            <span class="mr-2 d-block d-sm-inline-block mb-1 mb-sm-0">Clients:</span>
+                                            <span class="border-right pr-2 mr-2">John Inoue</span>
+                                            <span class="border-right pr-2 mr-2"> <a href="/cdn-cgi/l/email-protection"
+                                                    class="__cf_email__"
+                                                    data-cfemail="7812171016381d00191508141d561b1715">[email&#160;protected]</a></span>
+                                            <span>123-563-789</span>
+                                        </div>
+                                        <a href="#" class="btn-gray" style="text-decoration:none;">Envoyer un message</a>
+                                    </div>
+                                </div>
+                                <div class="buttons-to-right">
+                                    <a href="#" class="btn-gray mr-2" style="text-decoration:none;"><i class="far fa-times-circle mr-2"></i>
+                                        Refuser</a>
+                                    <a href="#" class="btn-gray" style="text-decoration:none;"><i class="far fa-check-circle mr-2"></i> Accepter</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">
+
+    </script>
+    </div>
+</body>
+
+{% endblock %}

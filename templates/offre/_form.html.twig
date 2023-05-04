@@ -1,0 +1,43 @@
+
+{{ form_start(form) }}
+<div class="container" style="margin-top:50px; margin-bottom:50px">
+    
+    <table class="table">
+    <div class="card-body">
+    <tbody>
+    <tr>
+    <div class="form-group">
+        {{ form_row(form.titre, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    </tr>
+    <div class="form-group">
+        {{ form_row(form.description, {'attr': {'class': 'form-control'}}) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_row(form.date, {'attr': {'class': 'form-control'}}) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_row(form.localisation, {'attr': {'class': 'form-control'}}) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_row(form.contact, {'attr': {'class': 'form-control'}}) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_row(form.budget, {'attr': {'class': 'form-control'}}) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_row(form.budget_max, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    
+    </tbody>
+
+    <button class="btn {{ button_color|default('btn-outline-primary') }}  mt-3">{{ button_label|default('Sauvgarder l Offre') }}</button>
+    </table>
+    </div>
+</div>
+{{ form_end(form) }}

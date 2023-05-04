@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+ A propos nous 
+{% endblock %}
+
+{% block body %}
+  <body style="background-color: #0093E9;
+            background-image: linear-gradient(180deg, #39C7FF 0%, #0093E9 100%);">
+    <div class="container my-5">
+      <div class="card" style="background-color:white;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="{{ asset('images/about.png') }}" class="card-img" style="margin-top:150px;">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body" style="font-family:poppins;">
+              <h1 class="card-title mb-5" style="color:blue;text-align:center;">A propos nous</h1>
+              <p class="card-text"><b style="color:blue;">Hire Hive</b> est une plateforme de freelance en ligne qui relie des entreprises et des clients à des professionnels indépendants du monde entier. Le site offre un large éventail de services de freelance, tels que la rédaction, la conception graphique, la programmation, la traduction, la vidéo, la musique et bien plus encore. </p>
+              <p class="card-text"><b style="color:blue;">Hire Hive </b>se distingue par sa simplicité d'utilisation et son interface conviviale. Les entreprises peuvent facilement créer un compte, poster des projets et trouver des freelances qualifiés pour travailler sur ces projets. Les freelances peuvent également créer un profil et proposer leurs services à des clients potentiels.</p>
+              <p class="card-text"><b style="color:blue;">La plateforme</b> offre des outils de communication pour les clients et les freelances, tels que des messageries intégrées et des appels vidéo, pour faciliter la collaboration et la gestion de projet. Elle propose également un système de paiement sécurisé pour garantir que les transactions sont effectuées de manière fiable et efficace.</p>
+              <p class="card-text"><b style="color:blue;">Enfin,</b> Hire Hive est dédié à la satisfaction de ses clients et de ses freelances. Le site propose des commentaires et des évaluations pour aider les clients à trouver les meilleurs professionnels indépendants pour leur travail et pour aider les freelances à améliorer leurs compétences et à augmenter leur visibilité sur la plateforme.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+{% endblock %}

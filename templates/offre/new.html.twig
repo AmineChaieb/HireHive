@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block title %}New Offre{% endblock %}
+
+
+{% block body %}
+    <h1 class="text-center mt-5 mb-3">Creér une nouvelle offre</h1>
+    <div class="card">
+      <div class="card-header">
+      <div class="container">  
+    <a class="btn btn-outline-info float-right" href="{{ path('app_offre_index') }}">back to list</a>
+      </div>  
+    </div>
+    <div class="card-body">
+                 {{ include('offre/_form.html.twig') }}
+    </div>
+{% endblock %}

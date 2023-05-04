@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}proposition envoyé{% endblock %}
+
+{% block body %}
+    <h1>proposition envoyée</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>proposition</th>
+                <th>Created_at</th>
+                <th>Description</th>
+                <th>Statut</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for proposition in propositions %}
+            <tr>
+                <td>{{ proposition.id }}</td>
+                <td>{{ proposition.proposition }}</td>
+                <td>{{ proposition.createdAt ? proposition.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ proposition.description }}</td>
+                <td>{{ proposition.statut }}</td>
+                <td>
+                    <a href="{{ path('app_proposition_show', {'id': proposition.id}) }}">show</a>
+                    <a href="{{ path('app_proposition_edit', {'id': proposition.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}

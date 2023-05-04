@@ -1,0 +1,88 @@
+{% extends"base.html.twig"%}
+{% block fablock %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+{% endblock %}
+{% block title %}
+    Acceuil
+{% endblock %}
+
+{% block body %}
+<link href="{{asset('css/home.css')}}" rel="stylesheet">
+<div style="background-color: #0093E9;
+            background-image: linear-gradient(180deg, #39C7FF 0%, #0093E9 100%);">
+<div class="container">
+<div class="row">
+    <div class="col-sm-6" style="margin-top:50px;margin-left:-70px;margin-right:40px;">
+    <h1 style="font-family:poppins;font-weight:600;margin-top:100px;color:white;">- Bienvenue sur Hire Hive</h1>
+    <p style="font-family:poppins;font-size:17px;color:white;"><b>Hire Hive</b> est une plateforme de freelance en ligne qui relie des entreprises et des clients à des 
+    professionnels indépendants du monde entier. Le site offre un large éventail de services de freelance,
+     tels que la rédaction, la conception graphique, la programmation, la traduction, la vidéo, la musique 
+     et bien plus encore.</p>
+     <a href="/Apropos"><button class="btn btn-primary" style="font-family:poppins;color:white;">Lire plus <i class="fa fa-book"></i></button></a>
+    </div>
+    <div class="col-sm-6">
+    <img src="{{ asset('images/home.png') }}" width="750" style="margin-top:70px;">
+    </div>
+
+<div class="divider" style="margin-top:150px;"><span></span><span>.</span><span></span></div>
+</div>
+</div>
+<div class="container">
+<h3 style="font-family:poppins;font-weight:500;color:white;margin-top:20px;">freelances populaires de la semaine</h3>
+<p style="font-family:poppins;font-size:17px;color:white;margin-top:30px;"><b>Hire Hive</b> Trouver le bon freelancer pour votre projet 
+peut être une tâche ardue, mais vous pouvez faire certaines choses pour faciliter le processus. L'un des meilleurs 
+moyens de trouver des pigistes recommandés est de demander des références à des collègues, des amis ou des membres 
+de la famille qui ont eu une expérience positive en travaillant avec un Freelancer.</p>
+{% block user %}
+    <div style="margin-top:60px;"> {% include 'user.html.twig' %} </div>
+{% endblock %}
+</div>
+
+<div class="divider"><span></span><span>.</span><span></span></div>
+
+{# <div class="container">
+<h1> HELLO WORLD </h1>
+
+<p> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+  in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+   sunt in culpa qui officia deserunt mollit anim id est laborum </P>
+
+</div>   #}
+
+
+{% block card %}
+    {% include 'card.html.twig' %}
+{% endblock %}
+<div class="divider"><span></span><span>.</span><span></span></div>
+<div class="container">
+<div class="row">
+<div class="col-sm-6">
+    <img src="{{ asset('images/job.png') }}" width="400" style="margin-top:70px;">
+    </div>
+    <div class="col-sm-6" style="margin-top:50px;">
+    <h1 style="font-family:poppins;font-weight:600;margin-top:100px;color:white;">Avantages de travailler avec des Freelances</h1>
+    <p style="font-family:poppins;font-size:17px;color:white;"><b>Travailler</b> avec un Freelancer peut
+     être une excellente option pour les entreprises ou les particuliers qui ont besoin de compétences ou de 
+     services spécifiques pour leurs projets. Les indépendants peuvent proposer des solutions rentables, car ils
+      facturent souvent des tarifs inférieurs à ceux des employés ou des agences traditionnels. Ils offrent également
+       de la flexibilité, car ils peuvent être embauchés au cas par cas, ce qui permet aux entreprises de se développer
+        ou de se réduire selon les besoins. 
+     et bien plus encore.</p>
+    </div>
+    
+</div>
+</div>
+    
+
+<div class="divider"><span></span><span>.</span><span></span></div>
+<div style="margin-bottom: -48px;">
+{% block card2 %}
+    {% include 'card2.html.twig' %}
+{% endblock %}
+</div>
+
+
+
+</div>
+{% endblock %}

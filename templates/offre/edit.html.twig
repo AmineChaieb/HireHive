@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Offre{% endblock %}
+
+{% block body %}
+    
+    <div class="container" style="margin-top:50px;margin-bottom:30px">
+    <h1>Editer l Offre</h1>
+    <table class="table">
+    <div class="card-body">
+    </div>
+    <div class="container" style="margin-top:50px;margin-bottom:30px">
+    {% include 'offre/_form.html.twig' with {'button_label': 'Update Offre', 'button_color': 'btn-outline-success'}%}
+    </div>
+    </table>
+    </div>
+{% endblock %}
